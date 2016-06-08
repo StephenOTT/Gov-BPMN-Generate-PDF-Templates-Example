@@ -13,6 +13,21 @@
 		<link rel='stylesheet' type='text/css' href='assets/css/style.css' />
 		<link rel='stylesheet' type='text/css' href='assets/css/bootstrap.css' />
 		<link rel='stylesheet' type='text/css' href='assets/css/prettify.css' />
+		<script>
+			function getParameterByName(name, url) {
+	    if (!url) url = window.location.href;
+	    name = name.replace(/[\[\]]/g, "\\$&");
+	    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+	        results = regex.exec(url);
+	    if (!results) return null;
+	    if (!results[2]) return '';
+	    return decodeURIComponent(results[2].replace(/\+/g, " "));
+			}
+
+			document.getElementById("dog").value = getParameterByName('foo');
+		</script>
+
+
 	</head>
 
 	<div class="container-fluid">
