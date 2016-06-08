@@ -13,23 +13,9 @@
 		<link rel='stylesheet' type='text/css' href='assets/css/style.css' />
 		<link rel='stylesheet' type='text/css' href='assets/css/bootstrap.css' />
 		<link rel='stylesheet' type='text/css' href='assets/css/prettify.css' />
-		<script>
-			function getParameterByName(name, url) {
-	    if (!url) url = window.location.href;
-	    name = name.replace(/[\[\]]/g, "\\$&");
-	    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-	        results = regex.exec(url);
-	    if (!results) return null;
-	    if (!results[2]) return '';
-	    return decodeURIComponent(results[2].replace(/\+/g, " "));
-			}
-
-			document.getElementById("dog").value = getParameterByName('foo');
-		</script>
-
-
 	</head>
 
+<body>
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-md-12">
@@ -59,8 +45,20 @@
 				</div>
 				<form role="form">
 					<div class="form-group">
-						<label id="dog">
-							Email address 123
+						<label id="val1">
+							Value1
+						</label><br>
+						<label id="val2">
+							Value2
+						</label><br>
+						<label id="val3">
+							Value3
+						</label><br>
+						<label id="val4">
+							Value4
+						</label><br>
+						<label id="val5">
+							Value5
 						</label>
 					</div>
 				</form>
@@ -101,3 +99,20 @@
 	</div>
 </body>
 </html>
+<script type="text/javascript">
+	function getParameterByName(name, url) {
+	if (!url) url = window.location.href;
+	name = name.replace(/[\[\]]/g, "\\$&");
+	var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+			results = regex.exec(url);
+	if (!results) return null;
+	if (!results[2]) return '';
+	return decodeURIComponent(results[2].replace(/\+/g, " "));
+	}
+
+	document.getElementById("val1").textContent = getParameterByName('val1');
+	document.getElementById("val2").textContent = getParameterByName('val2');
+	document.getElementById("val3").textContent = getParameterByName('val3');
+	document.getElementById("val4").textContent = getParameterByName('val4');
+	document.getElementById("val5").textContent = getParameterByName('val5');
+</script>
